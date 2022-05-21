@@ -1,5 +1,5 @@
 # DEEP-DIVE-INTO-WEB-3.0-RECRUITMENT-TASK
-Hello, I will explain my program a little here. Firstly to run the code, just give the information being asked.
+Hello, I will explain my program a little here. Firstly to run the code, just copy the code and run in c++ compiler and give the information being asked.
 I have made these by basic knowledge of OOP in C++. I have made this program in one day, so it may lack some concepts of OOP.
 I hope you will enjoy my program.
 

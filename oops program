@@ -1,0 +1,96 @@
+//header files
+#include <iostream>
+#include <fstream>
+#include <string>
+using namespace std;
+
+class Borrower {
+public:
+    string name;      
+    int money_borrow;
+    
+    Borrower(){
+        this->money_borrow=0;
+    }
+
+void addBorrower(int *loan){
+cout<<endl<<"Press any key to add Borrower details";
+getchar();
+cout<<endl<<"\n Enter Name of Borrower : ";
+cin>>name;
+
+
+int Nationality;
+cout<<endl<<"\n Press 1 for Indian or 2 for Non-Indian : ";
+cin>>Nationality;
+
+
+cout<<endl<<"Enter money to be borrowed : ";
+cin>>money_borrow;
+
+string choice;
+cout<<endl<<"Are you currently in debt ? yes/no : ";
+cin>>choice;
+
+
+if(choice=="no" || choice=="NO"){
+char plan;
+cout<<endl<<"----->Available loans<------";
+cout<<endl<<"1 -> 1 lakh for 3 months at 20%";
+cout<<endl<<"2 -> 2 lakh for 6 months at 18%";
+cout<<endl<<"3 -> 3 lakh for 9 months at 16%";
+cout<<endl<<"4 -> 5 lakh for 12 months at 12%";
+
+cout<<endl<<"Select any number ( 1, 2, 3, 4 ) : ";
+cin>>plan;
+
+switch(plan){     	
+case '1': *loan = 100000+(100000*3*20)/1200;   break;
+case '2': *loan = 100000+(100000*6*18)/1200; break;
+case '3': *loan =  100000+(100000*9*16)/1200; break;
+case '4' : *loan =  100000+(100000*12*12)/1200; break;
+default: cout<<endl<<"Invalid Choice..";
+}
+
+}
+else if (choice=="yes" || choice=="YES"){
+	cout<<"Sorry!! We can't help you"<<endl;
+}
+	
+}
+
+void generateBill(int *loan) {
+	cout<<"Total loan to be paid is: "<<*loan<<endl;
+}
+
+};
+
+
+int main() {
+	
+int choice = 0;
+int loan=0;
+
+while(choice!=-1){
+cout<<endl<<"## (Loan company) ##"<<endl;
+cout<<endl<<"1 Add Borrower Details";
+cout<<endl<<"2 Generate Bill";
+cout<<endl<<"-1 Exit";
+cout<<"\n\n Enter your choice : ";
+cin>>choice;
+Borrower first;
+switch(choice){
+case 1: first.addBorrower(&loan);
+	break;
+case 2: first.generateBill(&loan);
+	break;
+case -1: cout<<endl<<"Thank you!! We will always there for your help:)";
+	break;
+default: cout<<endl<<"Invalid Choice.."; getchar();
+	
+}
+	
+}
+
+return 0;
+}
